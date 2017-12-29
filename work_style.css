@@ -1,0 +1,160 @@
+html, body {
+    height: 100%;
+    overflow: hidden;
+    margin: 0
+}
+
+#map {
+    height: 100%;
+    width: 70%;
+    z-index: 1;
+    position: fixed;
+    top: 40px;
+    margin-bottom: 40px;
+}
+
+.hidden {
+    display: none
+}
+
+#intro {
+    font-family: 'Arial';
+    font-size: 15px;
+    color: #627D77;
+    z-index: 99;
+    position: fixed;
+    width: 0%;
+    width: 29.75%;
+    height: 100%;
+    background-color: white;
+    right: 0;
+    overflow-y: auto;
+    font-size: 15px;
+    top: 40px;
+    padding-right: 5px;
+    padding-left: 5px
+}
+
+.intro-text {
+    font-size: 17px;
+    text-align: center;
+}
+
+#jobList {
+    z-index: 50;
+    padding-top: 5px;
+    position: fixed;
+    width: 0%;
+    width: 29.75%;
+    height: 100%;
+    background-color: white;
+    right: 0;
+    padding-right: 5px;
+    padding-left: 5px;
+    overflow-y: auto;
+    top: 40px
+}
+
+#blue-header {
+    width: 100%;
+    height: 40px;
+    position: fixed;
+    z-index: 10000;
+    top: 0px;
+    background-color: #263f6a;
+    box-shadow: 0px 2px 2px gray;
+}
+
+
+#header-logo {
+    height: 35px;
+    margin-top: 1.5px;
+    margin-left: 27px;
+    display: inline;
+}
+
+#header-title {
+    font-family: 'Arial';
+    margin-left: 20px;
+    display: inline;
+    vertical-align:super;
+    z-index: 1000;
+    color: white;
+    margin-bottom: 5px
+}
+
+#header-subtitle {
+    font-family: 'Arial';
+    font-size: 14px;
+    display: inline;
+    vertical-align: super;
+    margin-left: 20px;
+    z-index: 1000;
+    color: white
+}
+
+.job-title {
+    margin-top: 5px;
+    font-family: 'Arial';
+    color: #444;
+}
+
+.job-details {
+    font-family: 'Arial';
+    color: #444;
+}
+
+hr {
+    opacity: .25;
+    color: #D1DFD6
+}
+
+#rb {
+    font-family: 'Arial';
+    background-color: #D1DFD6;
+    color: #444;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    border: none;
+    text-align: left;
+    outline: none;
+    padding: 7px
+
+}
+
+button.accordion {
+    font-family: 'Arial';
+    background-color: #D1DFD6;
+    color: #444;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 18px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: rgba(38, 63, 106, 0.3);
+}
+
+div.panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+}
+
+.icon {
+    margin-left: 5px;
+    margin-top: 10px
+}
+
