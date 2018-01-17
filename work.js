@@ -205,7 +205,7 @@ function jobZIPS(point){
                         }
                     });
                 };
-                zipDiv.innerHTML = '<b>Jobs in ' + feature.properties.ZIP + '</b> (' + feature.properties.POSTALCITYNAME + ')';
+                zipDiv.innerHTML = `<b>Jobs in ${feature.properties.ZIP}</b> (${feature.properties.POSTALCITYNAME})`;
                 
                 // append zip code button to jobList div
                 jobList.appendChild(zipDiv);
@@ -252,20 +252,20 @@ function searchJobs(point){
 // function to create individual divs and functionality for each job.
 function jobDiv(div, id, title, desc, coNumber, ftpt, wage){
     var jobDiv = document.createElement('div');
-    jobDiv.id = 'job' + id;
+    jobDiv.id = `job${id}` + id;
     jobDiv.className = 'job-div';
     jobDiv.onclick = function (){
         $("#" + $(this).children()[1].id).toggle();
     };
-    jobDiv.innerHTML += ('<div id="job-title" class="job-title">' +
-                            '<img class="icon" src="images/jeffco.png" style="height: 20px">' + 
-                            '&nbsp;<b>' + title + '</b> (' + desc + ')' +
-                         '</div>' +
-                         '<div id="' + coNumber + '"class="job-details hidden">' +
-                            '<p>&nbsp;&nbsp;CO Number: ' + coNumber + '<br>' +
-                            '&nbsp;&nbsp;FT/PT: ' + ftpt + '<br>' +
-                            '&nbsp;&nbsp;Hourly Wage: ' + wage + '<br><br></p>' +
-                         '</div><hr>');
+    jobDiv.innerHTML += (`<div id="job-title" class="job-title">` +
+                            `<img class="icon" src="images/jeffco.png" style="height: 20px">` + 
+                            `&nbsp;<b>${title}</b> (${desc})` +
+                         `</div>` +
+                         `<div id="${coNumber}" class="job-details hidden">` +
+                            `<p>&nbsp;&nbsp;CO Number: ${coNumber}<br>` +
+                            `&nbsp;&nbsp;FT/PT: ${ftpt}<br>` +
+                            `&nbsp;&nbsp;Hourly Wage: ${wage}<br><br></p>` +
+                         `</div><hr>`);
     
     div.appendChild(jobDiv);
 }
