@@ -40,9 +40,8 @@ html, body {
     text-align: center;
 }
 
-#jobList {
+#job-list-container {
     z-index: 50;
-    padding-top: 5px;
     position: fixed;
     width: 0%;
     width: 29.75%;
@@ -53,6 +52,11 @@ html, body {
     padding-left: 5px;
     overflow-y: auto;
     top: 40px
+}
+
+#jobList {
+    position:relative;
+    margin-top: 50px
 }
 
 #blue-header {
@@ -109,6 +113,14 @@ hr {
     color: #D1DFD6
 }
 
+#refresh-button{
+    background-color: white;
+    width: 100%;
+    z-index: 100;
+    position:fixed;
+
+}
+
 #rb {
     font-family: 'Arial';
     background-color: #D1DFD6;
@@ -116,13 +128,12 @@ hr {
     border-radius: 5px;
     cursor: pointer;
     margin-top: 10px;
-    margin-bottom: 5px;
     margin-right: 5px;
+    margin-bottom: 5px;
     border: none;
     text-align: left;
     outline: none;
-    padding: 7px
-
+    padding: 7px;
 }
 
 button.accordion {
