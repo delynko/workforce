@@ -1,6 +1,6 @@
 // mapbox streets tile layer
 var mapboxStreets = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+    attribution: 'Map data &copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
     maxZoom: 18,
     id: 'mapbox.streets',
     accessToken: 'pk.eyJ1IjoiZGVseW5rbyIsImEiOiJjaXBwZ3hkeTUwM3VuZmxuY2Z5MmFqdnU2In0.ac8kWI1ValjdZBhlpMln3w'
@@ -172,6 +172,9 @@ function jobZIPS(point){
         var zips = L.geoJson(data, {
             onEachFeature: function(feature, layer){
                 
+                // add popup to zip code layer
+                layer.bindPopup(feature.properties.ZIP);
+
                 // variable for jobList div...container for all job search results. This div exists already in the index.html file with a class of .hidden
                 var jobList = document.getElementById('jobList');
                 
@@ -216,7 +219,7 @@ function jobZIPS(point){
                 jobList.appendChild(jobDiv);
             },
             style: zipOriginalStyle,
-            interactive: false
+//            interactive: false
         });
             
         map.addLayer(zips);
@@ -241,8 +244,7 @@ function searchJobs(point){
                     var desc = feature.properties.job_list_Name;
                     var coNumber = feature.properties.job_list_CONumber;
                     var ftpt = feature.properties.job_list_FT_PT;
-                    var wage = feature.properties.job_list_HourlyWage;
-                    jobDiv(div, id, title, desc, coNumber, ftpt, wage);
+                    jobDiv(div, id, title, desc, coNumber, ftpt);
                 }
             }
         });
@@ -264,7 +266,6 @@ function jobDiv(div, id, title, desc, coNumber, ftpt, wage){
                          `<div id="${coNumber}" class="job-details hidden">` +
                             `<p>&nbsp;&nbsp;CO Number: ${coNumber}<br>` +
                             `&nbsp;&nbsp;FT/PT: ${ftpt}<br>` +
-                            `&nbsp;&nbsp;Hourly Wage: ${wage}<br><br></p>` +
                          `</div><hr>`);
     
     div.appendChild(jobDiv);
