@@ -233,6 +233,7 @@ function searchJobs(point){
     L.esri.query({
         url: zipsJobsURL
     }).where("OBJECTID > 0").nearby(point, 1609.34).run(function(error, data) {
+        console.log(data);
         L.geoJson(data, {
             onEachFeature: function (feature) {
                 
@@ -244,7 +245,8 @@ function searchJobs(point){
                     var desc = feature.properties.job_list_Name;
                     var coNumber = feature.properties.job_list_CONumber;
                     var ftpt = feature.properties.job_list_FT_PT;
-                    jobDiv(div, id, title, desc, coNumber, ftpt);
+                    var onet = feature.properties.job_list_ONETCat;
+                    jobDiv(div, id, title, desc, coNumber, ftpt, onet);
                 }
             }
         });
@@ -252,15 +254,18 @@ function searchJobs(point){
 }
 
 // function to create individual divs and functionality for each job.
-function jobDiv(div, id, title, desc, coNumber, ftpt, wage){
+function jobDiv(div, id, title, desc, coNumber, ftpt, onet){
     var jobDiv = document.createElement('div');
     jobDiv.id = `job${id}` + id;
     jobDiv.className = 'job-div';
     jobDiv.onclick = function (){
         $("#" + $(this).children()[1].id).toggle();
     };
+    
+    var icon = getIcon(onet)
+    
     jobDiv.innerHTML += (`<div id="job-title" class="job-title">` +
-                            `<img class="icon" src="images/jeffco.png" style="height: 20px">` + 
+                            `<img class="icon" src=${icon} style="height: 20px">` + 
                             `&nbsp;<b>${title}</b> (${desc})` +
                          `</div>` +
                          `<div id="${coNumber}" class="job-details hidden">` +
@@ -269,4 +274,16 @@ function jobDiv(div, id, title, desc, coNumber, ftpt, wage){
                          `</div><hr>`);
     
     div.appendChild(jobDiv);
+}
+
+function getIcon(onet){
+    var icon;
+    if (onet == 29){
+        icon = 'images/medical.png'
+    } else {
+        icon = 'images/jeffco.png';
+    }
+    
+    
+    return icon;
 }
