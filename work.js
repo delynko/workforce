@@ -280,6 +280,8 @@ function getIcon(onet){
     var icon;
     if (onet == 29){
         icon = 'images/medical.png'
+    } else if (onet == 13) {
+        icon = 'images/business.png'
     } else {
         icon = 'images/jeffco.png';
     }
