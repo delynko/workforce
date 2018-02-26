@@ -265,12 +265,12 @@ function jobDiv(div, id, title, desc, coNumber, ftpt, onet){
     var icon = getIcon(onet)
     
     jobDiv.innerHTML += (`<div id="job-title" class="job-title">` +
-                            `<img class="icon" src=${icon} style="height: 20px">` + 
-                            `&nbsp;<b>${title}</b> (${desc})` +
+                            `<div><img class="industry-icon" src=${icon} style="height: 20px"></div>` + 
+                            `<div>&nbsp;<b>${title}</b> (${desc})</div>` +
                          `</div>` +
                          `<div id="${coNumber}" class="job-details hidden">` +
-                            `<p>&nbsp;&nbsp;CO Number: ${coNumber}<br>` +
-                            `&nbsp;&nbsp;FT/PT: ${ftpt}<br>` +
+                            `<p>&nbsp;&nbsp;CO Number: <b>${coNumber}</b><br>` +
+                            `&nbsp;&nbsp;FT/PT: <b>${ftpt}</b><br>` +
                          `</div><hr>`);
     
     div.appendChild(jobDiv);
