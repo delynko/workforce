@@ -278,14 +278,76 @@ function jobDiv(div, id, title, desc, coNumber, ftpt, onet){
 
 function getIcon(onet){
     var icon;
-    if (onet == 29){
-        icon = 'images/medical.png'
-    } else if (onet == 13) {
-        icon = 'images/business.png'
-    } else {
-        icon = 'images/jeffco.png';
+    switch(onet){
+        case(29):
+            icon = 'images/industry-icons/medical.png';
+            break;
+        case(31):
+            icon = 'images/industry-icons/medical.png';
+            break;
+        case(13):
+            icon = 'images/industry-icons/business.png';
+            break;
+        case(17):
+            icon = 'images/industry-icons/engineering.png';
+            break;
+        case(27):
+            icon = 'images/industry-icons/art.png';
+            break;
+        case(37):
+            icon = 'images/industry-icons/maintenance.png';
+            break;
+        case(21):
+            icon = 'images/industry-icons/socialservices.png';
+            break;
+        case(15):
+            icon = 'images/industry-icons/computer.png';
+            break;
+        case(47):
+            icon = 'images/industry-icons/construction.png';
+            break;
+        case(25):
+            icon = 'images/industry-icons/book.png';
+            break;
+        case(45):
+            icon = 'images/industry-icons/ag.png';
+            break;
+        case(35):
+            icon = 'images/industry-icons/food.png';
+            break;
+        case(49):
+            icon = 'images/industry-icons/repair.png';
+            break;
+        case(23):
+            icon = 'images/industry-icons/legal.png';
+            break;
+        case(19):
+            icon = 'images/industry-icons/science.png';
+            break;
+        case(11):
+            icon = 'images/industry-icons/management.png';
+            break;
+        case(43):
+            icon = 'images/industry-icons/admin.png';
+            break;
+        case(39):
+            icon = 'images/industry-icons/personalservice.png';
+            break;
+        case(51):
+            icon = 'images/industry-icons/production.png';
+            break;
+        case(33):
+            icon = 'images/industry-icons/protection.png';
+            break;
+        case(41):
+            icon = 'images/industry-icons/sales.png';
+            break;
+        case(53):
+            icon = 'images/industry-icons/transportation.png';
+            break;
+        default:
+            icon = 'images/jeffco.png';
+            break;
     }
-    
-    
     return icon;
 }
