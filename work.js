@@ -208,6 +208,7 @@ function jobZIPS(point){
                         }
                     });
                 };
+                
                 zipDiv.innerHTML = `<b>Jobs in ${feature.properties.ZIP}</b> (${feature.properties.POSTALCITYNAME})`;
                 
                 // append zip code button to jobList div
@@ -253,7 +254,7 @@ function searchJobs(point){
     });
 }
 
-// function to create individual divs and functionality for each job.
+// function to create individual divs and functionality for each job listing.
 function jobDiv(div, id, title, desc, coNumber, ftpt, onet){
     var jobDiv = document.createElement('div');
     jobDiv.id = `job${id}` + id;
